@@ -16,28 +16,27 @@ public class ParseIntegers {
                             .split(" "));
 
     public static void main(String[] args) {
-          Iterator<String> words = WORDS.iterator();
+        Iterator<String> words = WORDS.iterator();
         int sum = 0;
         String justWords = "";
 
-            while (words.hasNext()) {
-                String next = words.next();
-                try {
-                    int number = Integer.parseInt(next);
-                    for(int i=0; i<=WORDS.size(); i++){
-                    }
-                    sum+=number;
+        while (words.hasNext()) {
+            String next = words.next();
+            try {
+                int number = Integer.parseInt(next);
+                for (int i = 0; i <= WORDS.size(); i++) {
+                }
+                sum += number;
 
-                } catch (NumberFormatException e) {
-                    for(int i=0; i<WORDS.size(); i++) {
+            } catch (NumberFormatException e) {
+                for (int i = 0; i < WORDS.size(); i++) {
 
-                        if (WORDS.get(i) == next)
-                            justWords += WORDS.get(i)+" ";
-                    }
+                    if (WORDS.get(i) == next)
+                        justWords += WORDS.get(i) + " ";
                 }
             }
-            System.out.println("Sum is " + sum);
-            System.out.println("Just words:" + justWords);
         }
+        System.out.println("Sum is " + sum);
+        System.out.println("Just words:" + justWords);
     }
-
+}
