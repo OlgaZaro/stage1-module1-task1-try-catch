@@ -31,8 +31,9 @@ public class ParseIntegers {
             } catch (NumberFormatException e) {
                 for (int i = 0; i < WORDS.size(); i++) {
 
-                    if (WORDS.get(i) == next)
+                    if (WORDS.get(i) == next) {
                         justWords += WORDS.get(i) + " ";
+                    }
                 }
             }
         }
