@@ -11,7 +11,7 @@ import java.util.List;
 public class ParseIntegers {
 
 
-    private static final List<String> WORDS =
+ private static final List<String> WORDS =
             Arrays.asList(
                     "JDK 17 has released on 14 September 2021 with 10 new features, 2 feature removals and 2 feature deprecations."
                             .split(" "));
@@ -20,6 +20,7 @@ public class ParseIntegers {
         Iterator<String> words = WORDS.iterator();
         int sum = 0;
         String justWords = "";
+        StringBuilder builder = new StringBuilder();
 
         while (words.hasNext()) {
             String next = words.next();
@@ -28,7 +29,9 @@ public class ParseIntegers {
                 sum += number;
 
             } catch (NumberFormatException e) {
-                justWords += next + " ";
+                builder.append(next);
+                builder.append(" ");
+                justWords = builder.toString();
             }
         }
         System.out.println("Sum is " + sum);
